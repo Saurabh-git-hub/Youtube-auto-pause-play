@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Auto Pause/Play",
+  "version": "1.0",
+  "description": "Auto pauses YouTube when switching tabs and resumes when coming back.",
+  "permissions": ["tabs", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+
+    "action": {
+    "default_icon": {
+      "48": "icon-popup-48.png"
+    }
+  },
+  "icons": {   
+  "48": "icon-popup-48.png"  
+},
+
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
